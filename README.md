@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-This repository contains implementations of various data structures and algorithms in [programming language] for educational and reference purposes.
+This repository contains implementations of various data structures and algorithms in C programming language for educational and reference purposes.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ This repository contains implementations of various data structures and algorith
 
 ## Introduction
 
-Data structures and algorithms are fundamental concepts in computer science and programming. This repository is a collection of implementations of commonly used data structures and algorithms in [programming language]. Whether you're a beginner looking to learn or an experienced developer seeking a quick reference, this repository can be a valuable resource.
+Data structures and algorithms are fundamental concepts in computer science and programming. This repository is a collection of implementations of commonly used data structures and algorithms in C programming language. Whether you're a beginner looking to learn or an experienced developer seeking a quick reference, this repository can be a valuable resource.
 
 ## Data Structures
 
