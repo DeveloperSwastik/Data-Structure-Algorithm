@@ -32,9 +32,11 @@ void print_array(int A[], int N)
     printf("\nSorted array is : {");
     for (i = 1; i <= N; i++)
     {
-        printf("%d, ", A[i]);
+        if (i != N)
+            printf("%d, ", A[i]);
+        else
+            printf("%d}", A[i]);
     }
-    printf("}");
 }
 
 void bubble_sort(int A[], int N)
@@ -47,9 +49,9 @@ void bubble_sort(int A[], int N)
         {
             if (A[j] > A[j + 1])
             {
-                temp = A[j];
-                A[j] = A[j + 1];
-                A[j + 1] = temp;
+                temp = A[ j ];
+                A[ j ] = A[ j + 1 ];
+                A[ j + 1 ] = temp;
             }
         }
     }

@@ -34,9 +34,11 @@ void print_array(int A[], int N)
     printf("\nSorted array is : {");
     for (i = 1; i <= N; i++)
     {
-        printf("%d, ", A[i]);
+        if (i != N)
+            printf("%d, ", A[i]);
+        else
+            printf("%d}", A[i]);
     }
-    printf("}");
 }
 
 void merge_sort(int A[], int P, int R)
@@ -48,7 +50,6 @@ void merge_sort(int A[], int P, int R)
         Q = (P + R) / 2;
         merge_sort(A, P, Q);
         merge_sort(A, Q + 1, R);
-        print_array(array, 5);
         merge(A, P, Q, R);
     }
 }

@@ -1,16 +1,17 @@
 #include <stdio.h>
+#include <limits.h>
 
 int array[10];
 
 void input_array(int[], int);
 void print_array(int[], int);
-void selection_sort(int[], int);
-int minimum(int[], int, int);
+void quick_sort(int[], int, int);
+int partition(int[], int, int);
 
 void main()
 {
     input_array(array, 5);
-    selection_sort(array, 5);
+    quick_sort(array, 1, 5);
     print_array(array, 5);
 }
 
@@ -40,35 +41,39 @@ void print_array(int A[], int N)
     }
 }
 
-void selection_sort(int A[], int N)
+void quick_sort(int A[], int P, int R)
 {
-    int k;
-    int loc;
-    int temp;
+    int Q;
 
-    for (k = 1; k <= N - 1; k++)
+    if (P < R)
     {
-        loc = minimum(A, k, N);
-        temp = A[k];
-        A[k] = A[loc];
-        A[loc] = temp;
+        Q = partition(A, P, R);
+        quick_sort(A, P, Q - 1);
+        quick_sort(A, Q + 1, R);
     }
 }
 
-int minimum(int A[], int K, int N)
+int partition(int A[], int P, int R)
 {
-    int j;
-    int min = A[K];
-    int loc = K;
+    int x, i, j, temp;
 
-    for (j = K + 1; j <= N; j++)
+    x = A[ R ];
+    i = P - 1;
+
+    for (j = P; j <= R - 1; j++)
     {
-        if (min > A[j])
+        if (A[ j ] <= x)
         {
-            min = A[j];
-            loc = j;
+            i++;
+            temp = A[ i ];
+            A[ i ] = A[ j ];
+            A[ j ] = temp;
         }
     }
 
-    return loc;
+    temp = A[ i + 1 ];
+    A[ i + 1 ] = A[ R ];
+    A[ R ] = temp;
+    
+    return ( i + 1 );
 }

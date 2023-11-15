@@ -32,9 +32,11 @@ void print_array(int A[], int N)
     printf("\nSorted array is : {");
     for (i = 1; i <= N; i++)
     {
-        printf("%d, ", A[i]);
+        if (i != N)
+            printf("%d, ", A[i]);
+        else
+            printf("%d}", A[i]);
     }
-    printf("}");
 }
 
 void insertion_sort(int A[], int N)
